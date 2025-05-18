@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.font-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* hide-scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+/* Navbar Line Animation */
+
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease, transform-origin 0s ease 0.3s;
+}
+
+.nav-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+
+.nav-underline2::after {
+  content: '';
+  position: absolute;
+  bottom: -2;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease, transform-origin 0s ease 0.3s;
+}
+
+.nav-underline2:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
