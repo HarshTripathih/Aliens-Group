@@ -76,3 +76,4 @@ jobs:
             docker pull harshtripathih/alienswebsite:latest
             docker rm -f aliens-webapp-container || true
             docker run -d -p 3000:3000 --name aliens-webapp-container harshtripathih/alienswebsite:latest
+          EOF
