@@ -1,31 +1,78 @@
+# name: Deploy Next.js application
+
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - name: Checkout Source
+#         uses: actions/checkout@v4
+#       - name: Create .env file
+#         run: echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
+#       - name: Build docker image
+#         run: docker build -t harshtripathih/alienswebsite .
+#       - name: Login to docker hub
+#         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+#       - name: Publish image to docker hub
+#         run: docker push harshtripathih/alienswebsite:latest
+
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Pull image from docker hub
+#         run: docker pull harshtripathih/alienswebsite:latest
+#       - name: Delete old container
+#         run: docker rm -f aliens-webapp-container  
+#       - name: Run docker container
+#         run: docker run -d -p 3000:3000 --name aliens-webapp-container harshtripathih/alienswebsite 
+
+
+
+
+
+
 name: Deploy Next.js application
 
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout Source
         uses: actions/checkout@v4
+
       - name: Create .env file
         run: echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
-      - name: Build docker image
+
+      - name: Build Docker image
         run: docker build -t harshtripathih/alienswebsite .
-      - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Publish image to docker hub
+
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push Docker image to Docker Hub
         run: docker push harshtripathih/alienswebsite:latest
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Pull image from docker hub
-        run: docker pull harshtripathih/alienswebsite:latest
-      - name: Delete old container
-        run: docker rm -f aliens-webapp-container  
-      - name: Run docker container
-        run: docker run -d -p 3000:3000 --name aliens-webapp-container harshtripathih/alienswebsite 
+      - name: Set up SSH key
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+          chmod 400 key.pem
+
+      - name: Deploy on EC2 via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+            docker pull harshtripathih/alienswebsite:latest
+            docker rm -f aliens-webapp-container || true
+            docker run -d -p 3000:3000 --name aliens-webapp-container harshtripathih/alienswebsite:latest
