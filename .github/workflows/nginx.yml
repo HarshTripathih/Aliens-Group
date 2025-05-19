@@ -24,7 +24,7 @@ jobs:
       - name: Build and push Nginx image
         uses: docker/build-push-action@v2
         with:
-          context: ./infra/ngnix
+          context: ../../infra/ngnix
           push: true
           tags: |
             335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/nginx:latest
