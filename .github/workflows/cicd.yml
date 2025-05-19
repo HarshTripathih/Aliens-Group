@@ -89,10 +89,10 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           script: |
-            # docker stop backend || true  
-            # docker container prune -f
-            # docker image prune -a -f
+            docker stop aliensgroup || true  
+            docker container prune -f
+            docker image prune -a -f
             aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 335160831887.dkr.ecr.ap-south-1.amazonaws.com
             docker pull 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
-            # docker run -d --name backend --hostname backend --network aliens 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
-            # docker run -d --name backend --hostname backend --network aliens --restart always 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
+            # docker run -d --name aliensgroup --hostname aliensgroup --network aliensgroup 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
+            docker run -d --name aliensgroup --hostname aliensgroup --network aliensgroup --restart always 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
