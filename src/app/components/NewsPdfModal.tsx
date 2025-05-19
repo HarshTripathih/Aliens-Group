@@ -14,8 +14,17 @@ interface PdfModalProps {
 const PdfModal: React.FC<PdfModalProps> = ({ isOpen, onClose, pdfPath, title = 'PDF Viewer' }) => {
   if (!isOpen) return null;
 
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div
+      className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+      onClick={handleBackdropClick}
+    >
       <div className="relative bg-white w-full max-w-4xl h-[90vh] rounded-lg shadow-lg overflow-hidden">
         {/* Close Button */}
         <button
@@ -31,21 +40,10 @@ const PdfModal: React.FC<PdfModalProps> = ({ isOpen, onClose, pdfPath, title = '
 
         {/* PDF Viewer */}
         <iframe
-          src={pdfPath}
+          src={`${pdfPath}#navpanes=0&scrollbar=0`}
           className="w-full h-full"
           title="PDF Viewer"
         />
-
-        {/* Download Button */}
-        {/* <div className="absolute top-2 left-[40rem]">
-            <a href={pdfPath} download>
-                <CustomButton
-                text="Download Pdf"
-                className="border border-black text-black"
-                />
-            </a>
-        </div> */}
-
       </div>
     </div>
   );

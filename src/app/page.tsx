@@ -6,6 +6,7 @@ import ProjectsPage from './projects/page';
 import FeaturedCategories from './components/carousel/FeaturedCategories';
 import AwardsPage from './awards/page';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
+import ClientHomeModal from './components/ClientHomeModal'; // 👈 new client component
 
 export async function generateMetadata(): Promise<Metadata> {
   const seoData = await getHomePageSEO();
@@ -25,11 +26,12 @@ export default function HomePage() {
   return (
     <main>
       <HeroVideoSection />
-      <AboutPage/>
-      <ProjectsPage/>
-      <FeaturedCategories/>
-      <AwardsPage/>
-      <TestimonialsSection/>
+      <AboutPage />
+      <ProjectsPage />
+      <FeaturedCategories />
+      <AwardsPage />
+      <TestimonialsSection />
+      <ClientHomeModal /> {/* 👈 Handles the modal logic */}
     </main>
   );
 }

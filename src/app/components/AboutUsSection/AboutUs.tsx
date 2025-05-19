@@ -123,7 +123,7 @@ export default function AboutUs({ content }: Props) {
       {/* Content */}
       <div
         ref={containerRef}
-        className="container mx-auto flex flex-col md:flex-row items-center gap-12 mt-8 px-40"
+        className="container mx-auto flex flex-col md:flex-row items-center gap-12 mt-8 md:px-40"
       >
         {/* Left - Image Reveal */}
         <div className="w-full md:w-3/2 relative overflow-hidden h-96">

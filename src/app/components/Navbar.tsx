@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
 
 
               {/* Desktop Nav */}
-              <nav className="w-3/4 hidden md:flex items-center justify-end space-x-8">
+              <nav className="md:w-3/4 hidden md:flex items-center justify-end space-x-8">
                 {navItems.map((item) => (
                   <Link
                   key={item.label}
