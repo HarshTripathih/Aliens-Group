@@ -18,10 +18,6 @@ const fadeUpVariant = {
   },
 };
 
-
-  
-
-
 export default function FeaturedCategories() {
   const [items, setItems] = useState<CarouselItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,10 +36,10 @@ export default function FeaturedCategories() {
   if (items.length === 0) return null;
 
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-24 px-4 sm:px-0">
       {/* Title */}
       <motion.h2
-        className="text-center text-[#B57F12] font-cormorant text-3xl tracking-wider font-semibold uppercase mb-4"
+        className="text-center text-[#B57F12] font-cormorant text-2xl sm:text-3xl tracking-wider font-semibold uppercase mb-4"
         variants={fadeUpVariant}
         initial="hidden"
         whileInView="visible"
@@ -53,53 +49,43 @@ export default function FeaturedCategories() {
       </motion.h2>
 
       {/* Animated lines */}
-                    
-                  {/* Left golden line */}
-                  <motion.div
-                    className="absolute top-[7rem] left-[19rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
-                    variants={leftLineVariant}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
-                    custom={0.6}
-      
-                  />
-      
-                  {/* Right golden line */}
-                  <motion.div
-                    className="absolute top-[7rem] right-[19rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
-                    variants={rightLineVariant}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
-                    custom={0.6}
-                  />
-      
-                  {/* Left white reveal overlay */}
-                  {/* Left white reveal overlay (shrinks leftward) */}
-                  <motion.div
-                    className="absolute top-[7rem] left-[19rem] h-[1px] bg-white z-20 origin-right"
-                    style={{ width: '21%' }}
-                    variants={revealLeftVariant}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
-                    custom={0.6}
-                  />
-      
-                  {/* Right white reveal overlay (shrinks rightward) */}
-                  <motion.div
-                    className="absolute top-[7rem] right-[19rem] h-[1px] bg-white z-20 origin-left"
-                    style={{ width: '21%' }}
-                    variants={revealRightVariant}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2 }}
-                    custom={0.6}
-                  />
+      <motion.div
+        className="absolute top-[5rem] sm:top-[7rem] left-[5%] sm:left-[19rem] h-px w-[30%] sm:w-[21%] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+        variants={leftLineVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        custom={0.6}
+      />
+      <motion.div
+        className="absolute top-[5rem] sm:top-[7rem] right-[5%] sm:right-[19rem] h-px w-[30%] sm:w-[21%] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+        variants={rightLineVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        custom={0.6}
+      />
+      <motion.div
+        className="absolute top-[5rem] sm:top-[7rem] left-[5%] sm:left-[19rem] h-px bg-white z-20 origin-right"
+        style={{ width: '30%' }}
+        variants={revealLeftVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        custom={0.6}
+      />
+      <motion.div
+        className="absolute top-[5rem] sm:top-[7rem] right-[5%] sm:right-[19rem] h-px bg-white z-20 origin-left"
+        style={{ width: '30%' }}
+        variants={revealRightVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        custom={0.6}
+      />
 
       {/* Carousel */}
-      <div className="relative w-full h-[750px] mt-8">
+      <div className="relative w-full aspect-[4/3] sm:h-[750px] mt-8">
         {items.map((item, index) => (
           <div
             key={index}
@@ -114,32 +100,34 @@ export default function FeaturedCategories() {
               objectFit="cover"
               className="transition-all duration-700"
             />
-            <div className="absolute left-[4rem] bottom-20 bg-[#e2e2e2]/20 backdrop-blur-sm text-white p-6 w-[350px] rounded-lg">
-              <h3 className="md:text-4xl font-cormorant font-bold">{item.title}</h3>
-              <p className="md:text-xl mt-1">{item.location}</p>
-              <p className="md:text-xl">Area : {item.area}</p>
+
+            <div className="absolute left-4 sm:left-[4rem] bottom-10 sm:bottom-20 bg-[#e2e2e2]/20 backdrop-blur-sm text-white p-2 sm:p-6 w-[200px] sm:w-[350px] max-w-[350px] rounded-lg">
+              <h3 className="text-base sm:text-4xl font-cormorant font-bold">{item.title}</h3>
+              <p className="text-xs sm:text-xl mt-1">{item.location}</p>
+              <p className="text-xs sm:text-xl">Area : {item.area}</p>
             </div>
-            <div className="absolute bottom-10 w-full flex justify-center">
-                <CustomButton 
-                    text='Learn More'
-                    className='text-white border border-white'
-                />
+
+            <div className="absolute left-[7rem] sm:left-0 bottom-4 sm:bottom-10 w-full flex justify-center">
+              <CustomButton 
+                text='Learn More'
+                className='text-xs sm:text-base text-white border border-white px-1 py-1 sm:px-4 sm:py-2'
+              />
             </div>
           </div>
         ))}
 
         {/* Arrows */}
         <button
-          className="absolute top-1/2 left-6 transform -translate-y-1/2 text-white z-20 bg-black/50 p-2 rounded-full hover:bg-black"
+          className="absolute top-1/2 left-2 sm:left-6 transform -translate-y-1/2 text-white z-20 bg-black/50 p-1 sm:p-2 rounded-full hover:bg-black"
           onClick={prevSlide}
         >
-          <ChevronLeft size={28} />
+          <ChevronLeft size={20} />
         </button>
         <button
-          className="absolute top-1/2 right-6 transform -translate-y-1/2 text-white z-20 bg-black/50 p-2 rounded-full hover:bg-black"
+          className="absolute top-1/2 right-2 sm:right-6 transform -translate-y-1/2 text-white z-20 bg-black/50 p-1 sm:p-2 rounded-full hover:bg-black"
           onClick={nextSlide}
         >
-          <ChevronRight size={28} />
+          <ChevronRight size={20} />
         </button>
       </div>
 

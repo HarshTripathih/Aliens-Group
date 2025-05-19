@@ -78,14 +78,15 @@ export default function ProjectCard({ project, custom = 0, animate }: Props) {
         </motion.div>
       </div>
 
-      <motion.div 
-        className="absolute bottom-6 left-6 text-white text-2xl font-semibold"
-        >
-        {project.title}
-      </motion.div>
-      <div className="absolute bottom-6 right-6 text-white text-sm tracking-wide flex items-center gap-1">
-        EXPLORE <span>→</span>
-      </div>
+      <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row justify-between items-start sm:items-center text-white">
+  <motion.div className="text-2xl font-semibold">
+    {project.title}
+  </motion.div>
+  <div className="text-sm tracking-wide flex items-center gap-1 mt-2 sm:mt-0">
+    EXPLORE <span>→</span>
+  </div>
+</div>
+
     </Link>
   );
 }

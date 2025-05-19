@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                 : 'bg-white shadow-md text-gray-900'
             }`}
           >
-            <div className="max-w-screen-xl mx-auto flex items-center justify-between">
+            <div className="max-w-screen-xl mx-auto flex items-center justify-between px-2">
               {/* Logo */}
               <div className="flex items-center gap-2">
                 <img

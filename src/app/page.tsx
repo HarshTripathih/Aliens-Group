@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function HomePage() {
   return (
-    <main>
+    <main className='w-full'>
       <HeroVideoSection />
       <AboutPage />
       <ProjectsPage />

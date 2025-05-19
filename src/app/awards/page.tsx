@@ -13,25 +13,50 @@ import { leftLineVariant, revealLeftVariant, revealRightVariant, rightLineVarian
 export default function AwardsPage() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-10% 0px -10% 0px' });
-
+  const [cardsPerView, setCardsPerView] = useState(1);
+  const [scrollStep, setScrollStep] = useState(1);
   const textControls = useAnimation();
   const cardControls = useAnimation();
 
   const [awards, setAwards] = useState<Award[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const visibleAwards = awards.slice(currentIndex, currentIndex + 2);
+  // Detect mobile/desktop to show 1 or 2 cards
+
+    useEffect(() => {
+      const updateView = () => {
+        if (window.innerWidth >= 1024) {
+          setCardsPerView(2);
+          setScrollStep(2);
+        } else {
+          setCardsPerView(1);
+          setScrollStep(1);
+        }
+      };
+
+      updateView(); // on mount
+      window.addEventListener('resize', updateView);
+      return () => window.removeEventListener('resize', updateView);
+    }, []);
 
 
-    const handlePrev = () => {
-        setCurrentIndex((prev) => Math.max(prev - 2, 0));
-    };
+   const visibleAwards = awards.slice(currentIndex, currentIndex + cardsPerView);
+
+
+
 
     const handleNext = () => {
-      setCurrentIndex((prev) =>
-        Math.min(prev + 2, awards.length - 2)
-      );
+      if (currentIndex + cardsPerView < awards.length) {
+        setCurrentIndex((prev) => prev + scrollStep);
+      }
     };
+
+    const handlePrev = () => {
+      if (currentIndex > 0) {
+        setCurrentIndex((prev) => Math.max(prev - scrollStep, 0));
+      }
+    };
+
 
 
   useEffect(() => {
@@ -56,8 +81,6 @@ export default function AwardsPage() {
       transition: { duration: 0.6, delay, ease: 'easeOut' },
     }),
   };
-
-
 
 
   const containerVariant = {
@@ -148,56 +171,55 @@ export default function AwardsPage() {
 
 
         <div className="relative flex justify-center items-center mt-16">
-            {/* Left Arrow */}
-            <button
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="absolute left-2 sm:left-8 z-10 p-2 bg-white rounded-full shadow-md disabled:opacity-40"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
+  {/* Left Arrow */}
+  <button
+    onClick={handlePrev}
+    disabled={currentIndex === 0}
+    className="absolute left-2 sm:left-8 z-10 p-2 bg-white rounded-full shadow-md disabled:opacity-40"
+  >
+    <ChevronLeft className="w-6 h-6 text-gray-600" />
+  </button>
 
-            {/* Cards */}
-            <motion.div
-            ref={containerRef}
-            className="flex gap-6 overflow-hidden px-4"
-          >
-            <AnimatePresence initial={false} mode="wait">
-              {visibleAwards.map((award, index) => (
-               <motion.div
-                key={award.id}
-                className="bg-red-200 rounded-3xl overflow-hidden shadow-md w-[320px] sm:w-[360px] md:w-[420px] flex-shrink-0"
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
-                exit={{ opacity: 0, y: -60, transition: { duration: 0.4, ease: 'easeIn' } }}
-              >
-
-                  <div className="relative w-full h-[320px]">
-                    <Image
-                      src={award.image}
-                      alt={award.description}
-                      fill
-                      className="object-contain bg-white"
-                    />
-                  </div>
-                  <div className="h-[30%] bg-gradient-to-t from-[#42454A] to-[#4A4D54] text-white text-center py-4 px-6 font-semibold text-sm sm:text-base uppercase tracking-wide">
-                    {award.title}
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-
-
-            {/* Right Arrow */}
-            <button
-              onClick={handleNext}
-              disabled={currentIndex + 2 >= awards.length}
-              className="absolute right-2 sm:right-8 z-10 p-2 bg-white rounded-full shadow-md disabled:opacity-40"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
+  {/* Cards */}
+  <motion.div
+    ref={containerRef}
+    className="flex gap-4 sm:gap-6 overflow-hidden px-4 w-full justify-center"
+  >
+    <AnimatePresence initial={false} mode="wait">
+      {visibleAwards.map((award) => (
+        <motion.div
+          key={award.id}
+          className="bg-red-200 rounded-3xl overflow-hidden shadow-md w-[280px] xsm:w-[300px] sm:w-[360px] md:w-[420px] flex-shrink-0"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }}
+          exit={{ opacity: 0, y: -60, transition: { duration: 0.4, ease: 'easeIn' } }}
+        >
+          <div className="relative w-full h-[220px] xsm:h-[260px] sm:h-[320px] bg-white">
+            <Image
+              src={award.image}
+              alt={award.description}
+              fill
+              className="object-contain"
+            />
           </div>
+          <div className="h-[30%] bg-gradient-to-t from-[#42454A] to-[#4A4D54] text-white text-center py-4 px-4 font-semibold text-sm sm:text-base uppercase tracking-wide">
+            {award.title}
+          </div>
+        </motion.div>
+      ))}
+    </AnimatePresence>
+  </motion.div>
+
+  {/* Right Arrow */}
+  <button
+    onClick={handleNext}
+    disabled={currentIndex + cardsPerView >= awards.length}
+    className="absolute right-2 sm:right-8 z-10 p-2 bg-white rounded-full shadow-md disabled:opacity-40"
+  >
+    <ChevronRight className="w-6 h-6 text-gray-600" />
+  </button>
+</div>
+
 
 
         <div className="flex justify-center mt-12">

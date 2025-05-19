@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
 
 .font-cursive {
@@ -24,7 +32,7 @@
 .nav-underline::after {
   content: '';
   position: absolute;
-  bottom: -2;
+  bottom: 0;
   left: 0;
   height: 2px;
   width: 100%;
@@ -44,7 +52,7 @@
 .nav-underline2::after {
   content: '';
   position: absolute;
-  bottom: -2;
+  bottom: 0;
   left: 0;
   height: 2px;
   width: 100%;
