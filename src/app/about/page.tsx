@@ -11,7 +11,7 @@ const aboutContent: AboutUsContent = {
   heading: 'Redefining Intelligent Luxury',
   subheading: 'Innovation Meets Elegance',
   description: 'At Aliens Group, we are redefining luxury living for the modern world. Headquartered in Gachibowli, Hyderabad, Aliens Group - comprising Aliens Developers and Aliens Smart City is the brainchild of visionary brothers Hari Challa and Venkat Challa.',
-  buttonText: 'Explore More',
+  buttonText: 'Explore Addon',
   imageUrl: '/images/aboutus.jpg',
 };
 
