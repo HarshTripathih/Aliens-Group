@@ -23,11 +23,16 @@ const TestimonialsSection = () => {
   }, [isInView]);
 
   const fadeUpVariant = {
-    hidden: { opacity: 0, y: 80 },
+    hidden: { opacity: 1, y: 40,
+      transition: {
+        duration: 4,
+        ease: 'easeOut',
+      },
+     },
     visible: (delay = 0) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay, ease: "easeOut" },
+      transition: { duration: 0.9, delay, ease: "easeOut" },
     }),
   };
 
@@ -108,7 +113,7 @@ const TestimonialsSection = () => {
           animate={textControls}
           custom={0.4}
           whileHover="hover"
-          className="text-black border border-black"
+          className="text-black border border-black sm:px-4 sm:py-2"
           onClick={() => router.push("/testimonials")}
         />
       </div>

@@ -13,6 +13,8 @@ import { leftLineVariant, revealLeftVariant, revealRightVariant, rightLineVarian
 export default function AwardsPage() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-10% 0px -10% 0px' });
+
+
   const [cardsPerView, setCardsPerView] = useState(1);
   const [scrollStep, setScrollStep] = useState(1);
   const textControls = useAnimation();
@@ -20,6 +22,8 @@ export default function AwardsPage() {
 
   const [awards, setAwards] = useState<Award[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
 
   // Detect mobile/desktop to show 1 or 2 cards
 
@@ -73,14 +77,35 @@ export default function AwardsPage() {
     }
   }, [isInView]);
 
-  const fadeUpVariant = {
-    hidden: { opacity: 0, y: 80 },
+  const fadeUpVariantButton = {
+    hidden: { opacity: 1, y: 40,
+      transition: {
+        duration: 4,
+        ease: 'easeOut',
+      },
+     },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, delay, ease: 'easeOut' },
+    }),
+  };
+
+
+  const fadeUpVariantHeading = {
+    hidden: { opacity: 1, y: 80,
+      transition: {
+        duration: 4,
+        ease: 'easeOut',
+      },
+     },
     visible: (delay = 0) => ({
       opacity: 1,
       y: 0,
       transition: { duration: 0.6, delay, ease: 'easeOut' },
     }),
   };
+
 
 
   const containerVariant = {
@@ -120,7 +145,7 @@ export default function AwardsPage() {
         </div>
         <motion.h2
           className="text-center text-[#B57F12] text-3xl tracking-wider font-cormorant font-semibold uppercase mb-4"
-          variants={fadeUpVariant}
+          variants={fadeUpVariantHeading}
           initial="hidden"
           animate={textControls}
           custom={0}
@@ -230,12 +255,12 @@ export default function AwardsPage() {
         <div className="flex justify-center mt-12">
           <CustomButton 
             text='Learn More'
-            variants={fadeUpVariant}
+            variants={fadeUpVariantButton}
             initial="hidden"
             animate={textControls}
             custom={0.2}
             whileHover="hover"
-            className='text-black border border-black' 
+            className='text-black border border-black sm:px-4 sm:py-2' 
             />
         </div>
       </section>

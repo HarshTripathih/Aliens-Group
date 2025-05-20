@@ -126,25 +126,37 @@ const Navbar: React.FC = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="flex justify-between h-full flex-col space-y-6 text-3xl font-light"
+                className="flex justify-between h-full flex-col space-y-6 text-2xl font-light"
               >
-                <div className='flex flex-col font-inter gap-4'>
-                  {primaryItems.map((item) =>
-                    item.label === 'NEWS LETTER' ? (
-                      <button
-                        key={item.label}
-                        onClick={() => setIsPdfModalOpen(true)}
-                        className="text-left"
-                      >
-                        {item.label}
-                      </button>
-                    ) : (
-                      <Link key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)}>
-                        {item.label}
-                      </Link>
-                    )
-                  )}
+                <div className='flex flex-col  justify-between gap-12'>
+                  {/* Logo */}
+                  <Image
+                    src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.svg" // ✅ Use your logo path (SVG, PNG, etc.)
+                    alt="Logo"
+                    width={202}
+                    height={55}
+                    className="object-contain"
+                    priority
+                  />
+                  <div className='flex flex-col font-inter gap-4'>
+                    {primaryItems.map((item) =>
+                      item.label === 'NEWS LETTER' ? (
+                        <button
+                          key={item.label}
+                          onClick={() => setIsPdfModalOpen(true)}
+                          className="text-left"
+                        >
+                          {item.label}
+                        </button>
+                      ) : (
+                        <Link key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)}>
+                          {item.label}
+                        </Link>
+                      )
+                    )}
+                  </div>
                 </div>
+
                 <div className="mt-12 space-y-2 text-sm font-light">
                   {secondaryItems.map((item) => (
                     <Link key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)} className="block">

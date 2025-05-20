@@ -17,13 +17,13 @@ export async function getAwards(): Promise<Award[]> {
     },
     {
       id: 3,
-      title: 'PLATINUM PRE-CERTIFICATION BY INDIAN GREEN BUILDING COUNCIL PLATINUM PRE-CERTIFICATION BY INDIAN GREEN BUILDING COUNCIL',
+      title: 'WINNER OF TWO PRESTIGIOUS INTERNATIONAL PROPERTY AWARDS-2012-13',
       image: 'https://d1b9peg0jj5bry.cloudfront.net/images/award3.svg',
       description: 'harsh',
     },
     {
       id: 4,
-      title: 'BEST RESIDENTIAL DEVELOPMENT – FUTURE',
+      title: 'WINNER OF INTERNATIONAL QUALITY CROWN (QC) AWARD',
       image: 'https://d1b9peg0jj5bry.cloudfront.net/images/award4.svg',
       description: 'bhai',
     },

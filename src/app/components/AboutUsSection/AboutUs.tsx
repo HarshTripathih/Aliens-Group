@@ -172,7 +172,7 @@ export default function AboutUs({ content }: Props) {
           animate={textControls}
           custom={0.9}
           whileHover="hover"
-          className='text-black border border-black'
+          className='text-black border border-black sm:px-4 sm:py-2'
           />
         </div>
       </div>
