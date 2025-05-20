@@ -6,25 +6,25 @@ export async function getAwards(): Promise<Award[]> {
     {
       id: 1,
       title: 'PLATINUM PRE-CERTIFICATION BY INDIAN GREEN BUILDING COUNCIL',
-      image: '/images/award1.svg',
+      image: 'https://d1b9peg0jj5bry.cloudfront.net/images/award1.svg',
       description: 'Indian Green Building Council Certificate Indian Green Building Council Certificate',
     },
     {
       id: 2,
       title: 'BEST RESIDENTIAL DEVELOPMENT – FUTURE',
-      image: '/images/award2.svg',
+      image: 'https://d1b9peg0jj5bry.cloudfront.net/images/award2.svg',
       description: 'Cityscape Real Estate Asia 2009',
     },
     {
       id: 3,
       title: 'PLATINUM PRE-CERTIFICATION BY INDIAN GREEN BUILDING COUNCIL PLATINUM PRE-CERTIFICATION BY INDIAN GREEN BUILDING COUNCIL',
-      image: '/images/award3.svg',
+      image: 'https://d1b9peg0jj5bry.cloudfront.net/images/award3.svg',
       description: 'harsh',
     },
     {
       id: 4,
       title: 'BEST RESIDENTIAL DEVELOPMENT – FUTURE',
-      image: '/images/award4.svg',
+      image: 'https://d1b9peg0jj5bry.cloudfront.net/images/award4.svg',
       description: 'bhai',
     },
   ];

@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../interfaces/navbar.interface';
 import PdfModal from './NewsPdfModal';
+import Image from 'next/image';
 
 const navItems: NavItem[] = [
   { label: 'About Us', href: '/maintenance' },
@@ -73,9 +74,12 @@ const Navbar: React.FC = () => {
             <div className="max-w-screen-xl mx-auto flex items-center justify-between px-2">
               {/* Logo */}
               <div className="flex items-center gap-2">
-                <img
-                  src="/logos/aliensnav.png"
+                <Image
+                  src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.png"
                   alt="Aliens Logo"
+                  width={202}
+                  height={55}
+                  priority // ensures it's preloaded since it's likely in the navbar
                   className="h-[55.05px] w-[202.26px]"
                 />
               </div>
@@ -170,12 +174,13 @@ const Navbar: React.FC = () => {
                 src="/videos/discovery.mp4"
                 className="w-full h-full object-cover"
                 /> */}
-                <img
-                  src="/logos/navimage.JPG"
+                <Image
+                  src="https://d1b9peg0jj5bry.cloudfront.net/logos/navimage.JPG"
                   alt="Navigation image"
-                  className="w-full h-full object-cover"
+                  fill // enables responsive sizing
+                  className="object-cover"
+                  priority // preload if it's above the fold
                 />
-
               </motion.div>
 
 

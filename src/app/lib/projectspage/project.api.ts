@@ -5,7 +5,7 @@ export async function getProjects(): Promise<ProjectCard[]> {
     {
       id: '1',
       title: 'Residential',
-      imageUrl: '/images/ssproject.jpeg',
+      imageUrl: 'https://d1b9peg0jj5bry.cloudfront.net/images/ssproject.jpeg',
       altText: 'Residential project',
       link: '/projects/residential',
       slug: 'residential',
@@ -14,7 +14,7 @@ export async function getProjects(): Promise<ProjectCard[]> {
     {
       id: '2',
       title: 'Plotted development',
-      imageUrl: '/images/hubproject.jpg',
+      imageUrl: 'https://d1b9peg0jj5bry.cloudfront.net/images/hubproject.jpg',
       altText: 'Plotted development project',
       link: '/projects/plotted',
       slug: 'plotted',

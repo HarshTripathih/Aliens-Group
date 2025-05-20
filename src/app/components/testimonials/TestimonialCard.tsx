@@ -3,6 +3,7 @@
 import React from "react";
 import { Testimonial } from "../../interfaces/testimonials.interface";
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 interface Props {
   testimonial: Testimonial;
@@ -40,8 +41,14 @@ const TestimonialCard: React.FC<Props> = ({ testimonial }) => {
           rel="noopener noreferrer"
           className="mt-2 flex items-center text-xs text-gray-600 hover:text-blue-600 hover:underline gap-1"
         >
-          <img src="/icons/youtube.png" alt="YouTube" className="w-4 h-4" />
-          Watch on YouTube
+          <Image
+            src="https://d1b9peg0jj5bry.cloudfront.net/icons/youtube.png"
+            alt="YouTube"
+            width={16}
+            height={16}
+            className="w-4 h-4"
+          />
+            Watch on YouTube
           <ExternalLink className="w-3.5 h-3.5" />
         </a>
       </div>

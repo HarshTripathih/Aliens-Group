@@ -1,6 +1,7 @@
 'use client';
 import { PaperPlaneIcon } from '@radix-ui/react-icons';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa6';
 
 
@@ -118,7 +119,13 @@ export default function AliensFooter() {
       {/* Bottom Bar */}
       <div className="mt-12 pt-6 border-t border-gray-300 flex flex-col sm:flex-row items-center justify-between px-4 text-sm text-gray-600">
         <div className="md:w-1/4 flex items-center md:justify-center gap-2">
-          <img src="/logos/aliensnav.png" alt="Aliens Group Logo" className="h-12" />
+          <Image
+            src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.png"
+            alt="Aliens Group Logo"
+            width={150} // adjust as needed
+            height={48} // adjust as needed
+            className="h-12 w-auto"
+          />
         </div>
         <div className="md:w-1/2 flex gap-4 mt-4 md:justify-center sm:mt-0">
           <span>Copyright © 2025 Aliens Group</span>

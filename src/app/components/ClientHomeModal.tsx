@@ -24,7 +24,7 @@ export default function ClientHomeModal() {
     <PdfModal
       isOpen={showModal}
       onClose={() => setShowModal(false)}
-      pdfPath="https://aliensgroupmedia.s3.ap-south-1.amazonaws.com/newsletter.pdf"
+      pdfPath="https://d1b9peg0jj5bry.cloudfront.net/pdfs/newsletter.pdf"
       title="Aliens Newsletter"
     />
   );

@@ -71,7 +71,7 @@ export default function ProjectCard({ project, custom = 0, animate }: Props) {
           <Image
             src={project.imageUrl}
             alt={project.altText}
-            loading="lazy"
+            priority
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />

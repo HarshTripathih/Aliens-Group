@@ -108,11 +108,16 @@ export default function AwardsPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <section className="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/awardbg.svg')",
-        }}
-      >
+      <section className="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://d1b9peg0jj5bry.cloudfront.net/images/awardbg.svg"
+            alt="Awards Background"
+            fill
+            className="object-cover object-center"
+            priority // or loading="lazy" if not above the fold
+          />
+        </div>
         <motion.h2
           className="text-center text-[#B57F12] text-3xl tracking-wider font-cormorant font-semibold uppercase mb-4"
           variants={fadeUpVariant}
