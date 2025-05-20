@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
               {/* Logo */}
               <div className="flex items-center gap-2">
                 <Image
-                  src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.png"
+                  src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.svg"
                   alt="Aliens Logo"
                   width={202}
                   height={55}
@@ -174,12 +174,12 @@ const Navbar: React.FC = () => {
                 src="/videos/discovery.mp4"
                 className="w-full h-full object-cover"
                 /> */}
-                <Image
-                  src="https://d1b9peg0jj5bry.cloudfront.net/logos/navimage.JPG"
+                <img
+                  src="/images/navimage.jpg"
                   alt="Navigation image"
-                  fill // enables responsive sizing
-                  className="object-cover"
-                  priority // preload if it's above the fold
+                  
+                  className="w-full h-full object-cover"
+                   // preload if it's above the fold
                 />
               </motion.div>
 
