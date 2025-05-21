@@ -5,7 +5,7 @@ export async function getProjects(): Promise<ProjectCard[]> {
     {
       id: '1',
       title: 'Residential',
-      imageUrl: 'https://res.cloudinary.com/dqqg1mr0u/image/upload/v1747808473/ssproject_pkdjzf.jpg',
+      imageUrl: 'https://d1b9peg0jj5bry.cloudfront.net/images/ssproject.png',
       altText: 'Residential project',
       link: '/projects/residential',
       slug: 'residential',
