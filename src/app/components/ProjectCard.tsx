@@ -73,6 +73,7 @@ export default function ProjectCard({ project, custom = 0, animate }: Props) {
             alt={project.altText}
             priority
             fill
+            unoptimized
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
         </motion.div>
