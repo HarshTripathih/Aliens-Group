@@ -12,6 +12,14 @@ html, body {
   overscroll-behavior: none;
 }
 
+body > * {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+/* * { */
+  /* outline: 1px solid red; temporary for debugging */
+/* } */
 
 .font-cursive {
   font-family: 'Great Vibes', cursive;
