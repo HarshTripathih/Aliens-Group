@@ -54,6 +54,17 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+  if (isMenuOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+  return () => {
+    document.body.style.overflow = '';
+  };
+}, [isMenuOpen]);
+
   return (
     <>
       {/* Top Navbar */}
@@ -176,7 +187,7 @@ const Navbar: React.FC = () => {
                   times: [0, 0.4, 0.9], // first 30px slowly, rest quickly
                   delay: 0.2,
                 }}
-                className="w-full md:mt-[5rem] md:w-[700px] self-center md:self-start overflow-hidden"
+                className="w-full md:mt-[5rem] md:w-[700px] self-center md:self-start overflow-hidden h-[380px]"
               >
                {/* <video
                 autoPlay

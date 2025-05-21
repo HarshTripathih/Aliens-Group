@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'd1b9peg0jj5bry.cloudfront.net',
-        pathname: '**', // allow all paths under the domain
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
       },
     ],
   },

@@ -13,7 +13,7 @@ export async function getFeaturedCategories(): Promise<CarouselItem[]> {
       title: 'Duplex',
       location: 'Tellapur-Gachibowli, Hyderabad',
       area: '3751-4112 sq.yd.',
-      imageUrl: '/images/featured2.jpg',
+      imageUrl: 'https://res.cloudinary.com/dqqg1mr0u/image/upload/v1747807509/Duplex_oktlim.jpg',
       buttonText: 'Know more',
     },
     {

@@ -8,14 +8,16 @@ html, body {
   padding: 0;
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  touch-action: pan-x pan-y;
+  overscroll-behavior: none;
 }
 
 
 .font-cursive {
   font-family: 'Great Vibes', cursive;
 }
+
+
 
 /* hide-scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
