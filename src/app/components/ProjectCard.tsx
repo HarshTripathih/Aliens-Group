@@ -72,6 +72,7 @@ export default function ProjectCard({ project, custom = 0, animate }: Props) {
               src={`${project.imageUrl}?w=800&h=600&auto=format&q=50&fit=crop`}
               alt={project.altText}
               fill
+              unoptimized
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
 
