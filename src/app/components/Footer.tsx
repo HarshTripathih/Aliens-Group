@@ -120,7 +120,7 @@ export default function AliensFooter() {
       <div className="mt-12 pt-6 border-t border-gray-300 flex flex-col sm:flex-row items-center justify-between px-4 text-sm text-gray-600">
         <div className="md:w-1/4 flex items-center md:justify-center gap-2">
           <Image
-            src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.png"
+            src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.svg"
             alt="Aliens Group Logo"
             width={150} // adjust as needed
             height={48} // adjust as needed

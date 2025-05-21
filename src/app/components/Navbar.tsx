@@ -198,7 +198,7 @@ const Navbar: React.FC = () => {
                 className="w-full h-full object-cover"
                 /> */}
                 <img
-                  src="/images/navimage.jpg"
+                  src="https://d1b9peg0jj5bry.cloudfront.net/images/navimage.png"
                   alt="Navigation image"
                   
                   className="w-full h-full object-cover"

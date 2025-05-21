@@ -8,7 +8,7 @@ export async function getHomePageSEO() {
       keywords: ['home', 'awesome', 'website'],
       ogTitle: 'Aliens Group Home',
       ogDescription: 'Check out our homepage',
-      ogImages: [{ url: 'https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.png' }]
+      ogImages: [{ url: 'https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.svg' }]
     };
   }
   
