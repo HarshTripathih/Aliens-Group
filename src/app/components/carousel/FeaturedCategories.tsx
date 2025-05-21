@@ -98,6 +98,7 @@ export default function FeaturedCategories() {
               alt={item.title}
               layout="fill"
               objectFit="cover"
+              unoptimized
               className="transition-all duration-700"
             />
 
