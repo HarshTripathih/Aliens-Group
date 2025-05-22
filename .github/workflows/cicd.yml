@@ -95,4 +95,4 @@ jobs:
             aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 335160831887.dkr.ecr.ap-south-1.amazonaws.com
             docker pull 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
             # docker run -d --name aliensgroup --hostname aliensgroup --network aliensgroup 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
-            docker run -d --name aliensgroup --hostname aliensgroup --network aliensgroup --restart always 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}
+            docker run -d -p 3000:3000 --name aliensgroup --hostname aliensgroup --network aliensgroup --restart always 335160831887.dkr.ecr.ap-south-1.amazonaws.com/aliensgroup/website:${{ github.sha }}

@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -15,6 +14,27 @@ const nextConfig: NextConfig = {
         pathname: '**',
       },
     ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/index.php',
+        destination: '/', // Redirect to homepage or relevant page
+        permanent: true,
+      },
+      {
+        source: '/home.php',
+        destination: '/', // Example redirect
+        permanent: true,
+      },
+      {
+        source: '/career.php',
+        destination: '/maintenance', // Redirect to your new contact page
+        permanent: true,
+      },
+      // Add more old routes as needed
+    ];
   },
 };
 
