@@ -31,7 +31,7 @@ export default function HomePage() {
       <FeaturedCategories />
       <AwardsPage />
       <TestimonialsSection />
-      {/* <ClientHomeModal />  */}
+      <ClientHomeModal /> 
     </main>
   );
 }
