@@ -19,7 +19,7 @@ const TestimonialCard: React.FC<Props> = ({ testimonial }) => {
   const embedUrl = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
 
   return (
-    <div className="bg-white shadow-md rounded-xl overflow-hidden w-[320px] flex-shrink-0 border border-gray-200">
+    <div className="bg-white shadow-md rounded-xl overflow-hidden w-[420px] flex-shrink-0 border border-gray-200">
       {/* Embedded YouTube iframe with full controls */}
       <div className="relative aspect-video">
         <iframe

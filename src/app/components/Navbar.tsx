@@ -76,22 +76,22 @@ const Navbar: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className={`fixed top-0 w-full z-50 ${
+            className={`fixed top-0 w-full h-[70px]flex items-center z-50 ${
               isTop
-                ? 'bg-[#000000a6] backdrop-blur-[40px] text-white'
+                ? 'bg-[#000000c6] backdrop-blur-[40px] text-white'
                 : 'bg-white shadow-md text-gray-900'
             }`}
           >
             <div className="max-w-screen-xl mx-auto flex items-center justify-between px-2">
               {/* Logo */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 p-2">
                 <Image
                   src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.svg"
                   alt="Aliens Logo"
                   width={202}
                   height={55}
                   priority // ensures it's preloaded since it's likely in the navbar
-                  className="h-[55.05px] w-[202.26px]"
+                  className=""
                 />
               </div>
 
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
                   key={item.label}
                   href={item.href}
                   className={`relative  transition font-medium
-                    ${isTop ? 'text-white nav-underline' : 'text-gray-900 nav-underline2'}
+                    ${isTop ? 'text-white nav-underline text-[16px] font-medium' : 'text-gray-900 text-[16px] font-medium nav-underline2'}
                   `}
                 >
                   {item.label}
@@ -218,7 +218,7 @@ const Navbar: React.FC = () => {
               initial={{ y: 60, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="absolute bottom-8 left-[45rem] text-[6rem] font-light"
+              className="absolute bottom-8 left-[45rem] 2xl:left-[72rem] text-[6rem] font-light"
             >
               <span className="font-serif mr-2">Next-Gen</span>
               <em className="italic font-serif">Homes</em>

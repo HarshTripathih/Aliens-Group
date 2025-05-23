@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 export default function ProjectsPage() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, margin: '-5% 0px -5% 0px' });
+  const isInView = useInView(containerRef, { once: false, margin: '10% 0px 10% 0px' });
   const textControls = useAnimation();
   const cardControls = useAnimation(); // separate animation control for cards
   const [projects, setProjects] = useState<ProjectCardType[]>([]);
@@ -34,14 +34,26 @@ export default function ProjectsPage() {
   }, [isInView]);
 
 
-  const fadeUpVariant = {
-    hidden: { opacity: 1, y: 110, transition: { duration: 0.7, ease: 'easeOut' } },
+ const fadeUpVariant = {
+    hidden: {
+      opacity: 1,
+      y: 110,
+      transition: {
+        duration: 1,
+        ease: 'easeOut',
+      },
+    },
     visible: (delay = 0) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, delay, ease: 'easeOut' },
+      transition: {
+        duration: 0.9,
+        delay,
+        ease: 'easeOut',
+      },
     }),
   };
+
 
 
   const containerVariant = {
@@ -75,7 +87,7 @@ export default function ProjectsPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <section className="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat">
+      <section className="relative py-[80px] overflow-hidden bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 -z-10">
                   <Image
                     src="https://d1b9peg0jj5bry.cloudfront.net/images/awardbg.svg"
@@ -99,10 +111,10 @@ export default function ProjectsPage() {
               
             {/* Left golden line */}
             <motion.div
-              className="absolute top-[7rem] left-[23rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+              className="absolute top-[6rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
               variants={leftLineVariant}
               initial="hidden"
-              whileInView="visible"
+              animate={textControls}
               viewport={{ once: false, amount: 0.2 }}
               custom={0.6}
 
@@ -110,10 +122,10 @@ export default function ProjectsPage() {
 
             {/* Right golden line */}
             <motion.div
-              className="absolute top-[7rem] right-[23rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+              className="absolute top-[6rem] right-[23rem] 2xl:right-[32.5rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
               variants={rightLineVariant}
               initial="hidden"
-              whileInView="visible"
+              animate={textControls}
               viewport={{ once: false, amount: 0.2 }}
               custom={0.6}
             />
@@ -121,30 +133,30 @@ export default function ProjectsPage() {
             {/* Left white reveal overlay */}
             {/* Left white reveal overlay (shrinks leftward) */}
             <motion.div
-              className="absolute top-[7rem] left-[23rem] h-[1px] bg-white z-20 origin-right"
+              className="absolute top-[6rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-white z-20 origin-right"
               style={{ width: '21%' }}
               variants={revealLeftVariant}
               initial="hidden"
-              whileInView="visible"
+              animate={textControls}
               viewport={{ once: false, amount: 0.2 }}
               custom={0.6}
             />
 
             {/* Right white reveal overlay (shrinks rightward) */}
             <motion.div
-              className="absolute top-[7rem] right-[23rem] h-[1px] bg-white z-20 origin-left"
+              className="absolute top-[6rem] right-[23rem 2xl:right-[32.5rem] h-[1px] bg-white z-20 origin-left"
               style={{ width: '21%' }}
               variants={revealRightVariant}
               initial="hidden"
-              whileInView="visible"
+              animate={textControls}
               viewport={{ once: false, amount: 0.2 }}
               custom={0.6}
             />    
 
         <motion.div
           ref={containerRef}
-          className="container mx-auto mt-16 flex flex-col md:flex-row gap-8 justify-center px-4 flex-wrap"
-          variants={containerVariant}
+          className="container mx-auto mt-[40px] mb-[40px] flex flex-col md:flex-row gap-8 justify-center px-4 flex-wrap"
+          variants={containerVariant} 
           initial="hidden"
           animate={cardControls} // important
         >

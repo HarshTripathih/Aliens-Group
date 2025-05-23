@@ -12,7 +12,7 @@ import { leftLineVariant, revealLeftVariant, revealRightVariant, rightLineVarian
 
 export default function AwardsPage() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, margin: '-10% 0px -10% 0px' });
+  const isInView = useInView(containerRef, { once: false, margin: '15% 0px 15% 0px' });
 
 
   const [cardsPerView, setCardsPerView] = useState(1);
@@ -78,7 +78,7 @@ export default function AwardsPage() {
   }, [isInView]);
 
   const fadeUpVariantButton = {
-    hidden: { opacity: 1, y: 40,
+    hidden: { opacity: 1, y: 110,
       transition: {
         duration: 4,
         ease: 'easeOut',
@@ -93,7 +93,7 @@ export default function AwardsPage() {
 
 
   const fadeUpVariantHeading = {
-    hidden: { opacity: 1, y: 80,
+    hidden: { opacity: 1, y: 110,
       transition: {
         duration: 4,
         ease: 'easeOut',
@@ -133,7 +133,7 @@ export default function AwardsPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <section className="relative py-24 overflow-hidden bg-cover bg-center bg-no-repeat">
+      <section className="relative py-[80px] overflow-hidden bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 -z-10">
           <Image
             src="https://d1b9peg0jj5bry.cloudfront.net/images/awardbg.svg"
@@ -157,7 +157,7 @@ export default function AwardsPage() {
               
             {/* Left golden line */}
             <motion.div
-              className="absolute top-[7rem] left-[15rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+              className="absolute top-[6rem] left-[15rem] 2xl:left-[25rem]  h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
               variants={leftLineVariant}
               initial="hidden"
               whileInView="visible"
@@ -168,7 +168,7 @@ export default function AwardsPage() {
 
             {/* Right golden line */}
             <motion.div
-              className="absolute top-[7rem] right-[15rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+              className="absolute top-[6rem] right-[15rem] 2xl:right-[25rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
               variants={rightLineVariant}
               initial="hidden"
               whileInView="visible"
@@ -179,7 +179,7 @@ export default function AwardsPage() {
             {/* Left white reveal overlay */}
             {/* Left white reveal overlay (shrinks leftward) */}
             <motion.div
-              className="absolute top-[7rem] left-[15rem] h-[1px] bg-white z-20 origin-right"
+              className="absolute top-[6rem] left-[15rem] 2xl:left-[25rem] h-[1px] bg-white z-20 origin-right"
               style={{ width: '21%' }}
               variants={revealLeftVariant}
               initial="hidden"
@@ -190,7 +190,7 @@ export default function AwardsPage() {
 
             {/* Right white reveal overlay (shrinks rightward) */}
             <motion.div
-              className="absolute top-[7rem] right-[15rem] h-[1px] bg-white z-20 origin-left"
+              className="absolute top-[6rem] right-[15rem] 2xl:right-[25rem] h-[1px] bg-white z-20 origin-left"
               style={{ width: '21%' }}
               variants={revealRightVariant}
               initial="hidden"
@@ -200,7 +200,7 @@ export default function AwardsPage() {
             />
 
 
-        <div className="relative flex justify-center items-center mt-16">
+<div className="relative flex justify-center items-center mt-[40px] mb-[40px]">
   {/* Left Arrow */}
   <button
     onClick={handlePrev}
@@ -260,7 +260,7 @@ export default function AwardsPage() {
             animate={textControls}
             custom={0.2}
             whileHover="hover"
-            className='text-black border border-black sm:px-4 sm:py-2' 
+            className='text-black text-[12px] border border-black sm:px-4 sm:py-2' 
             />
         </div>
       </section>

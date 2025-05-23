@@ -11,7 +11,7 @@ import { leftLineVariant, revealLeftVariant, revealRightVariant, rightLineVarian
 const TestimonialsSection = () => {
   const router = useRouter();
   const headingRef = useRef(null);
-  const isInView = useInView(headingRef, { once: false, margin: "-10% 0px -10% 0px" });
+  const isInView = useInView(headingRef, { once: false, margin: "40% 0px 40% 0px" });
   const textControls = useAnimation();
 
   useEffect(() => {
@@ -23,12 +23,7 @@ const TestimonialsSection = () => {
   }, [isInView]);
 
   const fadeUpVariant = {
-    hidden: { opacity: 1, y: 40,
-      transition: {
-        duration: 4,
-        ease: 'easeOut',
-      },
-     },
+    hidden: { opacity: 0, y: 110},
     visible: (delay = 0) => ({
       opacity: 1,
       y: 0,
@@ -38,7 +33,7 @@ const TestimonialsSection = () => {
 
 
   return (
-    <section className="py-16 relative">
+    <section className="py-[80px] relative">
       <div className="text-center mb-10 relative" ref={headingRef}>
         <motion.h2
           className="text-3xl font-semibold text-[#B57F12] tracking-wide relative z-10"
@@ -54,7 +49,7 @@ const TestimonialsSection = () => {
                       
                     {/* Left golden line */}
                     <motion.div
-                      className="absolute top-[1rem] left-[23rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+                      className="absolute top-[1rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
                       variants={leftLineVariant}
                       initial="hidden"
                       whileInView="visible"
@@ -65,7 +60,7 @@ const TestimonialsSection = () => {
         
                     {/* Right golden line */}
                     <motion.div
-                      className="absolute top-[1rem] right-[23rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+                      className="absolute top-[1rem] right-[23rem] 2xl:right-[32.5rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
                       variants={rightLineVariant}
                       initial="hidden"
                       whileInView="visible"
@@ -76,7 +71,7 @@ const TestimonialsSection = () => {
                     {/* Left white reveal overlay */}
                     {/* Left white reveal overlay (shrinks leftward) */}
                     <motion.div
-                      className="absolute top-[1rem] left-[23rem] h-[1px] bg-white z-20 origin-right"
+                      className="absolute top-[1rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-white z-20 origin-right"
                       style={{ width: '21%' }}
                       variants={revealLeftVariant}
                       initial="hidden"
@@ -87,7 +82,7 @@ const TestimonialsSection = () => {
         
                     {/* Right white reveal overlay (shrinks rightward) */}
                     <motion.div
-                      className="absolute top-[1rem] right-[23rem] h-[1px] bg-white z-20 origin-left"
+                      className="absolute top-[1rem] right-[23rem] 2xl:right-[32.5rem] h-[1px] bg-white z-20 origin-left"
                       style={{ width: '21%' }}
                       variants={revealRightVariant}
                       initial="hidden"
@@ -97,7 +92,7 @@ const TestimonialsSection = () => {
                     />
         
         </div>
-      <div className="overflow-x-auto hide-scrollbar">
+      <div className="overflow-x-auto hide-scrollbar mt-[40px] mb-[40px]">
         <div className="flex gap-6 px-4 md:px-10">
           {testimonialsData.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
@@ -113,7 +108,7 @@ const TestimonialsSection = () => {
           animate={textControls}
           custom={0.4}
           whileHover="hover"
-          className="text-black border border-black sm:px-4 sm:py-2"
+          className="text-black text-[12px] border border-black sm:px-4 sm:py-2"
           onClick={() => router.push("/testimonials")}
         />
       </div>

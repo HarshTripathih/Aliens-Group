@@ -69,11 +69,11 @@ export default function ProjectCard({ project, custom = 0, animate }: Props) {
           className="w-full h-full"
         >
           <Image
-              src={`${project.imageUrl}?w=800&h=600&auto=format&q=50&fit=crop`}
+              src={`${project.imageUrl}?w=703&h=555&auto=format&q=50&fit=crop`}
               alt={project.altText}
               fill
               unoptimized
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              className=" transition-transform duration-[2000ms] group-hover:scale-[1.15]"
             />
 
         </motion.div>
