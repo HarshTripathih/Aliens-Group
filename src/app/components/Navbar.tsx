@@ -199,7 +199,7 @@ const Navbar: React.FC = () => {
                 /> */}
                 <img
                   src="https://d1b9peg0jj5bry.cloudfront.net/images/navimage.png"
-                  alt="Navigation image"
+                  alt="Navigation pic"
                   
                   className="w-full h-full object-cover"
                    // preload if it's above the fold
