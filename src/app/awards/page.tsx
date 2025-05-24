@@ -179,7 +179,7 @@ export default function AwardsPage() {
             {/* Left white reveal overlay */}
             {/* Left white reveal overlay (shrinks leftward) */}
             <motion.div
-              className="absolute top-[6rem] left-[15rem] 2xl:left-[16rem] h-[1px] bg-white z-20 origin-right"
+              className="absolute top-[6rem] left-[15rem] 2xl:left-[16rem] h-[1px] bg-[#FAF7EA] z-20 origin-right"
               style={{ width: '21%' }}
               variants={revealLeftVariant}
               initial="hidden"
@@ -190,7 +190,7 @@ export default function AwardsPage() {
 
             {/* Right white reveal overlay (shrinks rightward) */}
             <motion.div
-              className="absolute top-[6rem] right-[15rem] 2xl:right-[16rem] h-[1px] bg-white z-20 origin-left"
+              className="absolute top-[6rem] right-[15rem] 2xl:right-[16rem] h-[1px] bg-[#FAF7EA] z-20 origin-left"
               style={{ width: '21%' }}
               variants={revealRightVariant}
               initial="hidden"

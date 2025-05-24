@@ -16,9 +16,10 @@ const HeroVideoSection = () => {
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-white text-4xl md:text-6xl font-cursive">
-          Futuristic. Serene. Yours
+        <h1 className="text-white text-[8rem] 2xl:text-[8rem] font-corinthia">
+          Futuristic<span className="mx-2 text-2xl">•</span>Serene<span className="mx-2 text-2xl">•</span>Yours
         </h1>
+
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { Playfair_Display } from 'next/font/google';
 import { Geist, Geist_Mono } from "next/font/google";
 import { Lato } from "next/font/google";
+import { Corinthia } from "next/font/google";
 
 
 
@@ -10,6 +11,13 @@ export const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-cormorant',
+  display: 'swap',
+});
+
+export const corinthia = Corinthia({
+  subsets: ['latin'],
+  weight: ['400','700'],
+  variable: '--font-corinthia',
   display: 'swap',
 });
 
@@ -51,6 +59,7 @@ export const allFontVariables = [
   inter.variable,
   playfair.variable,
   geistSans.variable,
-  geistMono.variable
+  geistMono.variable,
+  corinthia.variable
   // add more here
 ];

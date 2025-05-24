@@ -133,7 +133,7 @@ export default function ProjectsPage() {
             {/* Left white reveal overlay */}
             {/* Left white reveal overlay (shrinks leftward) */}
             <motion.div
-              className="absolute top-[6rem] left-[23rem] 2xl:left-[24rem] h-[1px] bg-white z-20 origin-right"
+              className="absolute top-[6rem] left-[23rem] 2xl:left-[24rem] h-[1px] bg-[#FAF7EA] z-20 origin-right"
               style={{ width: '21%' }}
               variants={revealLeftVariant}
               initial="hidden"
@@ -144,7 +144,7 @@ export default function ProjectsPage() {
 
             {/* Right white reveal overlay (shrinks rightward) */}
             <motion.div
-              className="absolute top-[6rem] right-[23rem 2xl:right-[24rem] h-[1px] bg-white z-20 origin-left"
+              className="absolute top-[6rem] right-[23rem 2xl:right-[24rem] h-[1px] bg-[#FAF7EA] z-20 origin-left"
               style={{ width: '21%' }}
               variants={revealRightVariant}
               initial="hidden"

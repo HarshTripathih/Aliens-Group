@@ -118,16 +118,16 @@ export default function AliensFooter() {
 
       {/* Bottom Bar */}
       <div className="mt-12 pt-6 border-t border-gray-300 flex flex-col sm:flex-row items-center justify-between px-4 text-sm text-gray-600">
-        <div className="md:w-1/4 flex items-center md:justify-end gap-2">
+        <div className="md:w-1/3 flex items-center justify-center 2xl:justify-center gap-2">
           <Image
             src="https://d1b9peg0jj5bry.cloudfront.net/logos/aliensnav.svg"
             alt="Aliens Group Logo"
-            width={202} // adjust as needed
+            width={170} // adjust as needed
             height={55} // adjust as needed
             className="h-12 w-auto"
           />
         </div>
-        <div className="md:w-1/2 flex gap-4 mt-4 md:justify-center sm:mt-0">
+        <div className="md:w-1/2 flex gap-12 mt-4 md:justify-center sm:mt-0">
           <span>Copyright © 2025 Aliens Group</span>
           <a href="#" className="hover:underline">Disclaimer</a>
           <a href="#" className="hover:underline">Site Layout</a>

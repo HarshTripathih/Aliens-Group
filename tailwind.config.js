@@ -29,6 +29,7 @@ module.exports = {
         geistSans: 'var(--font-geistSans)',
         geistMono: 'var(--font-geistMono)',
         lato: 'var(--font-lato)',
+        corinthia: 'var(--font-corinthia)',
         // Add more here
       },
     },
