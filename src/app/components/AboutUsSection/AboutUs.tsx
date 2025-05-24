@@ -119,7 +119,7 @@ const revealVariant = {
     
                 {/* Right golden line */}
                 <motion.div
-                  className="absolute top-[6rem] right-[25rem] 2xl:right-[30rem] 2xl:right-[35rem] 3xl:right-[28rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+                  className="absolute top-[6rem] right-[25rem] 2xl:right-[30rem] 3xl:right-[28rem] 3xl:right-[28rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
                   variants={rightLineVariant}
                   initial="hidden"
                   // whileInView="visible"
