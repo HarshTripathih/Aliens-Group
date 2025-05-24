@@ -42,7 +42,7 @@ const TestimonialCard: React.FC<Props> = ({ testimonial }) => {
           className="mt-2 flex items-center text-xs text-gray-600 hover:text-blue-600 hover:underline gap-1"
         >
           <Image
-            src="https://d1b9peg0jj5bry.cloudfront.net/icons/youtube.png"
+            src="/icons/youtube.svg"
             alt="YouTube"
             width={16}
             height={16}
