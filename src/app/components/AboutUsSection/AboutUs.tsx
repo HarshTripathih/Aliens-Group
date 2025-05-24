@@ -107,7 +107,7 @@ const revealVariant = {
                   
                 {/* Left golden line */}
                 <motion.div
-                  className="absolute top-[6rem] left-[25rem]  2xl:left-[30rem] 3xl:left-[22rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+                  className="absolute top-[6rem] left-[25rem]  2xl:left-[26.5rem]  h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
                   variants={leftLineVariant}
                   initial="hidden"
                   // whileInView="visible"
@@ -119,7 +119,7 @@ const revealVariant = {
     
                 {/* Right golden line */}
                 <motion.div
-                  className="absolute top-[6rem] right-[25rem] 2xl:right-[30rem] 3xl:right-[22rem] 3xl:right-[28rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+                  className="absolute top-[6rem] right-[25rem] 2xl:right-[26.5rem]  h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
                   variants={rightLineVariant}
                   initial="hidden"
                   // whileInView="visible"
@@ -131,7 +131,7 @@ const revealVariant = {
                 {/* Left white reveal overlay */}
                 {/* Left white reveal overlay (shrinks leftward) */}
                 <motion.div
-                  className="absolute top-[6rem] left-[25rem] 2xl:left-[30rem] 3xl:left-[22rem] h-[1px] bg-white z-20 origin-right"
+                  className="absolute top-[6rem] left-[25rem] only-2xl:left-[26.5rem]  h-[1px] bg-white z-20 origin-right"
                   style={{ width: '21%' }}
                   variants={revealLeftVariant}
                   initial="hidden"
@@ -143,7 +143,7 @@ const revealVariant = {
     
                 {/* Right white reveal overlay (shrinks rightward) */}
                 <motion.div
-                  className="absolute top-[6rem] right-[25rem] 2xl:right-[30rem] 3xl:right-[22rem] h-[1px] bg-white z-20 origin-left"
+                  className="absolute top-[6rem] right-[25rem] only-2xl:right-[26.5rem] h-[1px] bg-white z-20 origin-left"
                   style={{ width: '21%' }}
                   variants={revealRightVariant}
                   initial="hidden"
@@ -190,7 +190,7 @@ const revealVariant = {
           </motion.h3>
 
           <motion.p
-            className="font-lato text-[12px] 2xl:text-[18px] text-[#000000]/50 mb-6"
+            className="font-lato text-[12px] 2xl:text-[14.8px] text-[#000000]/50 mb-6"
             variants={fadeUpVariant}
             initial="hidden"
             animate={textControls}
@@ -206,7 +206,7 @@ const revealVariant = {
           animate={textControls}
           custom={0.9}
           whileHover="hover"
-          className='text-black text-[12px] font-semibold border border-black sm:px-4 sm:py-2'
+          className='text-black text-[14px] font-semibold border border-black sm:px-4 sm:py-2'
           />
         </div>
       </div>

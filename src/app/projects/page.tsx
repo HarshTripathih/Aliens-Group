@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 export default function ProjectsPage() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, margin: '10% 0px 10% 0px' });
+  const isInView = useInView(containerRef, { once: false, margin: '20% 0px 20% 0px' });
   const textControls = useAnimation();
   const cardControls = useAnimation(); // separate animation control for cards
   const [projects, setProjects] = useState<ProjectCardType[]>([]);
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
               
             {/* Left golden line */}
             <motion.div
-              className="absolute top-[6rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+              className="absolute top-[6rem] left-[23rem] 2xl:left-[24rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
               variants={leftLineVariant}
               initial="hidden"
               animate={textControls}
@@ -122,7 +122,7 @@ export default function ProjectsPage() {
 
             {/* Right golden line */}
             <motion.div
-              className="absolute top-[6rem] right-[23rem] 2xl:right-[32.5rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+              className="absolute top-[6rem] right-[23rem] 2xl:right-[24rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
               variants={rightLineVariant}
               initial="hidden"
               animate={textControls}
@@ -133,7 +133,7 @@ export default function ProjectsPage() {
             {/* Left white reveal overlay */}
             {/* Left white reveal overlay (shrinks leftward) */}
             <motion.div
-              className="absolute top-[6rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-white z-20 origin-right"
+              className="absolute top-[6rem] left-[23rem] 2xl:left-[24rem] h-[1px] bg-white z-20 origin-right"
               style={{ width: '21%' }}
               variants={revealLeftVariant}
               initial="hidden"
@@ -144,7 +144,7 @@ export default function ProjectsPage() {
 
             {/* Right white reveal overlay (shrinks rightward) */}
             <motion.div
-              className="absolute top-[6rem] right-[23rem 2xl:right-[32.5rem] h-[1px] bg-white z-20 origin-left"
+              className="absolute top-[6rem] right-[23rem 2xl:right-[24rem] h-[1px] bg-white z-20 origin-left"
               style={{ width: '21%' }}
               variants={revealRightVariant}
               initial="hidden"

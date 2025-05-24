@@ -12,7 +12,7 @@ import { leftLineVariant, revealLeftVariant, revealRightVariant, rightLineVarian
 
 export default function AwardsPage() {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, margin: '15% 0px 15% 0px' });
+  const isInView = useInView(containerRef, { once: false, margin: '20% 0px 20% 0px' });
 
 
   const [cardsPerView, setCardsPerView] = useState(1);
@@ -157,7 +157,7 @@ export default function AwardsPage() {
               
             {/* Left golden line */}
             <motion.div
-              className="absolute top-[6rem] left-[15rem] 2xl:left-[25rem]  h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+              className="absolute top-[6rem] left-[15rem] 2xl:left-[16rem]  h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
               variants={leftLineVariant}
               initial="hidden"
               whileInView="visible"
@@ -168,7 +168,7 @@ export default function AwardsPage() {
 
             {/* Right golden line */}
             <motion.div
-              className="absolute top-[6rem] right-[15rem] 2xl:right-[25rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+              className="absolute top-[6rem] right-[15rem] 2xl:right-[16rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
               variants={rightLineVariant}
               initial="hidden"
               whileInView="visible"
@@ -179,7 +179,7 @@ export default function AwardsPage() {
             {/* Left white reveal overlay */}
             {/* Left white reveal overlay (shrinks leftward) */}
             <motion.div
-              className="absolute top-[6rem] left-[15rem] 2xl:left-[25rem] h-[1px] bg-white z-20 origin-right"
+              className="absolute top-[6rem] left-[15rem] 2xl:left-[16rem] h-[1px] bg-white z-20 origin-right"
               style={{ width: '21%' }}
               variants={revealLeftVariant}
               initial="hidden"
@@ -190,7 +190,7 @@ export default function AwardsPage() {
 
             {/* Right white reveal overlay (shrinks rightward) */}
             <motion.div
-              className="absolute top-[6rem] right-[15rem] 2xl:right-[25rem] h-[1px] bg-white z-20 origin-left"
+              className="absolute top-[6rem] right-[15rem] 2xl:right-[16rem] h-[1px] bg-white z-20 origin-left"
               style={{ width: '21%' }}
               variants={revealRightVariant}
               initial="hidden"

@@ -11,7 +11,7 @@ import { leftLineVariant, revealLeftVariant, revealRightVariant, rightLineVarian
 const TestimonialsSection = () => {
   const router = useRouter();
   const headingRef = useRef(null);
-  const isInView = useInView(headingRef, { once: false, margin: "40% 0px 40% 0px" });
+  const isInView = useInView(headingRef, { once: false, margin: "45% 0px 45% 0px" });
   const textControls = useAnimation();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const TestimonialsSection = () => {
                       
                     {/* Left golden line */}
                     <motion.div
-                      className="absolute top-[1rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+                      className="absolute top-[1rem] left-[23rem] 2xl:left-[23.5rem] h-[1px] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
                       variants={leftLineVariant}
                       initial="hidden"
                       whileInView="visible"
@@ -60,7 +60,7 @@ const TestimonialsSection = () => {
         
                     {/* Right golden line */}
                     <motion.div
-                      className="absolute top-[1rem] right-[23rem] 2xl:right-[32.5rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+                      className="absolute top-[1rem] right-[23rem] 2xl:right-[23.5rem] h-[1px] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
                       variants={rightLineVariant}
                       initial="hidden"
                       whileInView="visible"
@@ -71,7 +71,7 @@ const TestimonialsSection = () => {
                     {/* Left white reveal overlay */}
                     {/* Left white reveal overlay (shrinks leftward) */}
                     <motion.div
-                      className="absolute top-[1rem] left-[23rem] 2xl:left-[32.5rem] h-[1px] bg-white z-20 origin-right"
+                      className="absolute top-[1rem] left-[23rem] 2xl:left-[23.5rem] h-[1px] bg-white z-20 origin-right"
                       style={{ width: '21%' }}
                       variants={revealLeftVariant}
                       initial="hidden"
@@ -82,7 +82,7 @@ const TestimonialsSection = () => {
         
                     {/* Right white reveal overlay (shrinks rightward) */}
                     <motion.div
-                      className="absolute top-[1rem] right-[23rem] 2xl:right-[32.5rem] h-[1px] bg-white z-20 origin-left"
+                      className="absolute top-[1rem] right-[23rem] 2xl:right-[23.5rem] h-[1px] bg-white z-20 origin-left"
                       style={{ width: '21%' }}
                       variants={revealRightVariant}
                       initial="hidden"

@@ -17,6 +17,21 @@ body > * {
   overflow-x: clip;
 }
 
+@layer utilities {
+  @media (min-width: 1536px) and (max-width: 1709px) {
+    .only-2xl\:left-\[35rem\] {
+      left: 35rem;
+    }
+  }
+
+  @media (min-width: 1710px) and (max-width: 1919px) {
+    .only-3xl\:left-\[45rem\] {
+      left: 45rem;
+    }
+  }
+}
+
+
 /* * { */
   /* outline: 1px solid red; temporary for debugging */
 /* } */

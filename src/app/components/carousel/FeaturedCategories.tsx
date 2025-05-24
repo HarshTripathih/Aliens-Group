@@ -75,7 +75,7 @@ export default function FeaturedCategories() {
 
       {/* Animated lines */}
       <motion.div
-        className="absolute top-[5rem] sm:top-[6rem] left-[19rem] 2xl:left-[28.2rem] h-px w-[30%] sm:w-[21%] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
+        className="absolute top-[5rem] sm:top-[6rem] left-[19rem] 2xl:left-[19.5rem] h-px w-[30%] sm:w-[21%] bg-gradient-to-r from-[#80808040] to-[#B57F12CC] origin-left z-10"
         variants={leftLineVariant}
         initial="hidden"
         whileInView="visible"
@@ -83,7 +83,7 @@ export default function FeaturedCategories() {
         custom={0.6}
       />
       <motion.div
-        className="absolute top-[5rem] sm:top-[6rem] right-[19rem] 2xl:right-[28.2rem] h-px w-[30%] sm:w-[21%] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
+        className="absolute top-[5rem] sm:top-[6rem] right-[19rem] 2xl:right-[19.5rem] h-px w-[30%] sm:w-[21%] bg-gradient-to-r from-[#B57F12CC] to-[#80808040] origin-right z-10"
         variants={rightLineVariant}
         initial="hidden"
         whileInView="visible"
@@ -91,7 +91,7 @@ export default function FeaturedCategories() {
         custom={0.6}
       />
       <motion.div
-        className="absolute top-[5rem] sm:top-[6rem] left-[19rem] 2xl:left-[28.2rem] h-px bg-white z-20 origin-right"
+        className="absolute top-[5rem] sm:top-[6rem] left-[19rem] 2xl:left-[19.5rem] h-px bg-white z-20 origin-right"
         style={{ width: '30%' }}
         variants={revealLeftVariant}
         initial="hidden"
@@ -100,7 +100,7 @@ export default function FeaturedCategories() {
         custom={0.6}
       />
       <motion.div
-        className="absolute top-[5rem] sm:top-[6rem] right-[19rem] 2xl:right-[28.2rem] h-px bg-white z-20 origin-left"
+        className="absolute top-[5rem] sm:top-[6rem] right-[19rem] 2xl:right-[19.5rem] h-px bg-white z-20 origin-left"
         style={{ width: '30%' }}
         variants={revealRightVariant}
         initial="hidden"
